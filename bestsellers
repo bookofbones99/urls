@@ -1,0 +1,14 @@
+import datetime
+
+start_date = datetime.date(1984, 1, 1)
+end_date = datetime.date(2022, 12, 31)
+
+sunday_urls = []
+
+delta = datetime.timedelta(days=1)
+while start_date <= end_date:
+    if start_date.weekday() == 6:  # Sunday is 6th day of the week
+        sunday_urls.append(f"https://www.nytimes.com/{start_date:%Y/%m/%d}/books/best-sellers.html")
+    start_date += delta
+
+print(sunday_urls)
